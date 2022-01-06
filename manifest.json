@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "LeetSessionManager",
   "description": "Manage leetcode sessions easily",
-  "homepage_url": "https://github.com/pawan/LeetcodeSessionManager",
+  "homepage_url": "https://github.com/pawanjenu/LeetcodeSessionManager",
   "version": "1.1.8",
   "author": "Pawan Jenu",
   "browser_action": {
