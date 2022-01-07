@@ -1,4 +1,4 @@
-# LeetcodeSessionManager
+# LeetcodeSessionManager(Multiple users 1 leetcode premium account)
 
 # About
 This extension helps is multiple people using the same LeetCode account.
