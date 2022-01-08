@@ -48,8 +48,8 @@ jobs:
                    
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           files: ./LeetcodeSessionManager*.zip       
           tag_name: v${{ github.run_number }}
-          if: ${{ github.event_name == 'workflow_dispatch' }}
           name: Release V${{ github.event.inputs.tag }}
