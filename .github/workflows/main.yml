@@ -41,7 +41,7 @@ jobs:
       - name: Zip disk folder
         run: |
           cd ./dist/LeetcodeSessionManager
-          zip -r ../../LeetcodeSessionManager-$(node -p "require('./package.json').version").zip ./dist/LeetcodeSessionManager
+          zip -r ../../LeetcodeSessionManager-$(node -p "require('./package.json').version").zip .
                    
       - name: 'Upload Build Artifacts'
         uses: actions/upload-artifact@v2
