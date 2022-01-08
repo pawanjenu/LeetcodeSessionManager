@@ -1,0 +1,51 @@
+
+.w3-hide {
+  display: none !important;
+}
+
+.snackbar-panel-inner {
+  // background-color: #626262;
+  // border-radius: 0.4rem;
+  font-size: 1.4rem;
+
+  .snackbar {
+    &-content {
+      // padding: 1rem 1.5rem;
+      display: inline-block;
+    }
+
+    &-icon {
+      margin-right: 0.8rem;
+
+      &-success {
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      &-failure {
+        img {
+          width: 1.5rem;
+          height: 1.3rem;
+        }
+      }
+    }
+
+    &-message {
+      &-string {
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 1.9rem;
+      }
+    }
+
+    &-action {
+      &-button {
+        font-weight: 500;
+        color: #9fd3ff;
+        padding: 0 1.7rem;
+      }
+    }
+  }
+}

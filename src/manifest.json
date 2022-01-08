@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "LeetSessionManager",
+  "description": "Manage leetcode sessions easily",
+  "homepage_url": "https://github.com/pawanjenu/LeetcodeSessionManager",
+  "version": "2.0.0",
+  "author": "Pawan Jenu",
+  "browser_action": {
+    "default_icon": "assets/thumbnail.png",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/thumbnail.png",
+    "48": "assets/thumbnail.png",
+    "128": "assets/thumbnail.png"
+  },
+  "background": {
+    "scripts": ["background.js", "runtime.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "https://leetcode.com/*",
+    "unlimitedStorage",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}

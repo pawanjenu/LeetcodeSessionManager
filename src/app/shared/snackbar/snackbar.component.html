@@ -1,0 +1,66 @@
+
+<div class="snackbar-panel-inner">
+  <div class="snackbar flex-box flex-box--space-between">
+    <div class="snackbar-content flex-box">
+      <div
+        class="snackbar-icon snackbar-icon-success flex-box flex-box--column"
+        [ngClass]="{ 'w3-hide': type !== 'success' }"
+      >
+        <img
+          src="assets/images/icons/icon-snackbar-success.svg"
+          alt="Success"
+        />
+      </div>
+      <div
+        class="snackbar-icon snackbar-icon-warning flex-box flex-box--column"
+        [ngClass]="{ 'w3-hide': type !== 'warning' }"
+      >
+        <img
+          src="assets/images/icons/icon-snackbar-warning.svg"
+          alt="Warning"
+        />
+      </div>
+      <span
+        class="snackbar-icon snackbar-icon-failure flex-box flex-box--column"
+        [ngClass]="{ 'w3-hide': type !== 'failure' }"
+      >
+        <img
+          src="assets/images/icons/icon-snackbar-failure.svg"
+          alt="Failure"
+        />
+      </span>
+      <div
+        class="snackbar-icon snackbar-icon-info flex-box flex-box--column"
+        [ngClass]="{ 'w3-hide': type !== 'info' }"
+      >
+        <img src="assets/images/icons/icon-snackbar-info.svg" alt="Info" />
+      </div>
+      <span class="snackbar-message-container flex-box--column">
+        <span
+          *ngIf="!isMessageInnerHtml()"
+          class="snackbar-message snackbar-message-string flex-box"
+        >
+          {{ message }}
+        </span>
+        <span
+          *ngIf="isMessageInnerHtml()"
+          class="snackbar-message snackbar-message-html flex-box"
+          [innerHTML]="messageAsInnerHTML().innerHTML"
+        ></span>
+      </span>
+    </div>
+
+    <div
+      *ngIf="action"
+      class="snackbar-action-container flex-box flex-box--column"
+    >
+      <button
+        class="snackbar-action-button"
+        mat-button
+        (click)="snackBarRef.dismissWithAction()"
+      >
+        {{ action }}
+      </button>
+    </div>
+  </div>
+</div>
