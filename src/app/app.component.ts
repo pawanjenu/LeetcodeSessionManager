@@ -139,7 +139,7 @@ export class AppComponent {
           'failure',
           undefined,
           {
-            duration: 1000,
+            duration: 1500,
           }
         );
       }, 0);
