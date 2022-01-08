@@ -46,6 +46,7 @@ jobs:
         run: |
           mv LICENSE ./dist/LeetcodeSessionManager
           cd ./dist/LeetcodeSessionManager
+          sed  -i '/version/s/[^.]*$/'"${{ github.event.inputs.tag }}\"/" manifest.json
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
                    
       - name: 'Create GitHub Release'
