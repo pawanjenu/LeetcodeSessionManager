@@ -39,14 +39,21 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Npm build
         run: npm run build
-            
+
+       # Runs a set of commands using the runners shell
+      - name: replace version
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          jq '.version="${{ github.event.inputs.tag }}"' ./dist/LeetcodeSessionManager/manifest.json > ./new_manifest.json
+
        # Runs a set of commands using the runners shell
       - name: Zip extension
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
+          ls -lrth
           mv LICENSE ./dist/LeetcodeSessionManager
+          mv ./new_manifest.json ./dist/LeetcodeSessionManager/manifest.json
           cd ./dist/LeetcodeSessionManager
-          sed  -i '/version/s/[^.]*$/'"${{ github.event.inputs.tag }}\"/" manifest.json
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
                    
       - name: 'Create GitHub Release'
