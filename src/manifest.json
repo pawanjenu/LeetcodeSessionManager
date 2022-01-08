@@ -6,7 +6,13 @@
   "version": "1.1.9",
   "author": "Pawan Jenu",
   "browser_action": {
+    "default_icon": "assets/thumbnail.png",
     "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/thumbnail.png",
+    "48": "assets/thumbnail.png",
+    "128": "assets/thumbnail.png"
   },
   "background": {
     "scripts": ["background.js", "runtime.js"],
@@ -14,12 +20,10 @@
   },
   "permissions": [
     "https://leetcode.com/*",
-    "tabs",
     "unlimitedStorage",
     "storage",
     "cookies",
     "webRequest",
     "webRequestBlocking"
-  ],
-  "content_security_policy": "script-src 'self' https://code.jquery.com/jquery-3.3.1.min.js https://github.com/login/oauth/authorize https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js; object-src 'self'"
+  ]
 }

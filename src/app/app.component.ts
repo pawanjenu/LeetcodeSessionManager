@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
+  NgZone,
   Output,
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -37,7 +38,8 @@ export class AppComponent {
     private formBuilder: FormBuilder,
     private _appService: SrcService,
     private cdRef: ChangeDetectorRef,
-    private _snackBarService: SnackbarService
+    private _snackBarService: SnackbarService,
+    private ngZone: NgZone
   ) {
     chrome.storage.local.get('sessions', async (data2) => {
       console.debug('reading local sessions', data2.sessions);
@@ -97,14 +99,7 @@ export class AppComponent {
 
       if (!Array.isArray(sessions) || !sessions.length) {
         console.debug('unable to get sessions');
-        this._snackBarService.show(
-          AppStringLiterals.LEETCODE_SESSION_ERROR,
-          'failure',
-          undefined,
-          {
-            duration: 3000,
-          }
-        );
+        this.showSessionError();
       } else {
         this.isLoading = false;
         console.debug('Fetched sessions: ', sessions);
@@ -116,17 +111,9 @@ export class AppComponent {
     } catch (err) {
       this.isLoading = false;
       console.debug('unable to get sessions:', err);
-      this._snackBarService.show(
-        AppStringLiterals.LEETCODE_SESSION_ERROR,
-        'failure',
-        undefined,
-        {
-          duration: 2000,
-        }
-      );
+      this.showSessionError();
     }
     this.isLoading = false;
-    this.cdRef.detectChanges();
   }
 
   /**
@@ -138,5 +125,20 @@ export class AppComponent {
   async onReloadClick() {
     // refresh leetcode sessions
     await this.refreshLeetcodeSessions();
+  }
+
+  showSessionError(){
+    this.ngZone.run(() => {
+      setTimeout(() => {
+        this._snackBarService.show(
+          AppStringLiterals.LEETCODE_SESSION_ERROR,
+          'failure',
+          undefined,
+          {
+            duration: 1000,
+          }
+        );
+      }, 0);
+    });
   }
 }
