@@ -39,13 +39,13 @@ jobs:
             
        # Runs a set of commands using the runners shell
       - name: Zip disk folder
-        run: zip -r release.zip ./dist/LeetcodeSessionManager
+        run: zip -r LeetcodeSessionManager-$(node -p "require('./package.json').version") ./dist/LeetcodeSessionManager
                    
       - name: 'Upload Build Artifacts'
         uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: ./release.zip
+          path: ./LeetcodeSessionManager*.zip
           
   release-content:
     name: 'Create GitHub Release'
@@ -61,6 +61,6 @@ jobs:
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
         with:
-          files: ./release.zip         
+          files: ./LeetcodeSessionManager*.zip       
           tag_name: v${{ github.run_number }}
           name: Release V${{ github.run_number }}
