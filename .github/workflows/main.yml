@@ -4,6 +4,14 @@ name: Build and Release
 
 # Controls when the workflow will run
 on:
+  push:
+    branches:
+      - master
+ 
+  pull_request:
+    branches:
+      - master
+      
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -33,6 +41,7 @@ jobs:
             
        # Runs a set of commands using the runners shell
       - name: Zip disk folder
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           cd ./dist/LeetcodeSessionManager
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
@@ -42,4 +51,5 @@ jobs:
         with:
           files: ./LeetcodeSessionManager*.zip       
           tag_name: v${{ github.run_number }}
+          if: ${{ github.event_name == 'workflow_dispatch' }}
           name: Release V${{ github.event.inputs.tag }}
