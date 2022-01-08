@@ -4,10 +4,6 @@ name: Build and Release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -39,11 +35,11 @@ jobs:
       - name: Zip disk folder
         run: |
           cd ./dist/LeetcodeSessionManager
-          zip -r ../../LeetcodeSessionManager-$(node -p "require('../../package.json').version").zip .
+          zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
                    
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
         with:
           files: ./LeetcodeSessionManager*.zip       
           tag_name: v${{ github.run_number }}
-          name: Release V${{ github.run_number }}
+          name: Release V${{ github.event.inputs.tag }}
