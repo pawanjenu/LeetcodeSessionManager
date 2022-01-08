@@ -41,7 +41,7 @@ jobs:
         run: npm run build
             
        # Runs a set of commands using the runners shell
-      - name: Zip disk folder
+      - name: Zip extension
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           cd ./dist/LeetcodeSessionManager
