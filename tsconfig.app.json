@@ -3,7 +3,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["chrome", "firefox-webext-browser"]
+    "types": ["chrome"]
   },
   "files": [
     "src/main.ts",

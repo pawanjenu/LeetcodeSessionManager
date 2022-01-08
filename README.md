@@ -17,6 +17,8 @@ Please head over to: [Installation section](https://github.com/pawanjenu/Leetcod
 * Please make sure that you are logged in to leetcode.com before using the extension.
 * On the first run, no session is chosen, so please click on the the drop down and select the desired session.
 * your all set, headover to leetcode.com and start solving.
+![extension_steps](https://user-images.githubusercontent.com/30225325/148636930-6e37eaab-ebb2-4464-882d-359988eec111.gif)
+
 ### Note: in case new sessions are added to your account, please click on `reload session` in the extension to reflect the latest changes if not present.
 
 # ScreenShots:

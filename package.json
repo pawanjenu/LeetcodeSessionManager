@@ -26,8 +26,6 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@types/chrome": "0.0.174",
-    "@types/firefox": "0.0.31",
-    "@types/firefox-webext-browser": "^94.0.1",
     "D": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
