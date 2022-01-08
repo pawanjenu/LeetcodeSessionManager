@@ -1,4 +1,4 @@
-# LeetcodeSessionManager[![Build and Release](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml)
+# LeetcodeSessionManager [![Build and Release](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml)
 #### Multiple Users, 1 Leetcoce Premium Account!
 <p align="center">
   <a href="https://addons.mozilla.org/en-US/firefox/addon/leetsessionmanager/" target="_blank">
