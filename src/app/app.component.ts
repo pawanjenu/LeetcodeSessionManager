@@ -100,6 +100,7 @@ export class AppComponent {
       if (!Array.isArray(sessions) || !sessions.length) {
         console.debug('unable to get sessions');
         this.showSessionError();
+        this.cdRef.detectChanges();
       } else {
         this.isLoading = false;
         console.debug('Fetched sessions: ', sessions);
@@ -112,8 +113,11 @@ export class AppComponent {
       this.isLoading = false;
       console.debug('unable to get sessions:', err);
       this.showSessionError();
+
+      this.cdRef.detectChanges();
     }
     this.isLoading = false;
+    this.cdRef.detectChanges();
   }
 
   /**

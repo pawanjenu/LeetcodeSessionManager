@@ -143,14 +143,10 @@
   .card.highlight-card {
     background-color: grey;
     color: white;
-    font-weight: 600;
     border: none;
     width: auto;
     position: relative;
     display: inline-block;
-  }
-
-  .card.card.highlight-card span {
   }
 
   svg#rocket {
@@ -373,9 +369,12 @@
     <!-- Highlight Card -->
 
     <div class="card highlight-card card-small">
-      <span *ngIf="currentChosenSession"
-        >Current User Session: {{ currentChosenSession?.name }}</span
-      >
+      <span *ngIf="currentChosenSession">
+        <span>
+          Current User Session:
+        </span>
+        <span style="font-weight: 600;">{{ currentChosenSession?.name }}</span>
+        </span>
       <span *ngIf="!currentChosenSession">No User Session chosen</span>
     </div>
 
