@@ -35,5 +35,32 @@ jobs:
         
       # Runs a set of commands using the runners shell
       - name: Npm build
-        run: |
-          npm run build
+        run: npm run build
+            
+       # Runs a set of commands using the runners shell
+      - name: Zip disk folder
+        run: zip -r release.zip ./dist/LeetcodeSessionManager
+                   
+      - name: 'Upload Build Artifacts'
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ./release.zip
+          
+  release-content:
+    name: 'Create GitHub Release'
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+    steps:      
+      - name: 'Download Presentation Artifacts'
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+      - name: 'Create GitHub Release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./release.zip         
+          tag_name: v${{ github.run_number }}
+          name: Release V${{ github.run_number }}
