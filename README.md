@@ -4,7 +4,7 @@
   <a href="https://addons.mozilla.org/en-US/firefox/addon/leetsessionmanager/" target="_blank">
     <img width="149" height="48" src="badges/Firefox.png?raw=true">
   </a>
-  <a href="https://chrome.google.com/webstore/detail/heikhhbkgpfclbhidmjebagbmnkcmkfk" target="_blank">
+  <a href="https://github.com/pawanjenu/LeetcodeSessionManager/wiki/Install-extension" target="_blank">
   <img width="178" height="48" src="badges/Chrome.png?raw=true">
   </a>
 </p>

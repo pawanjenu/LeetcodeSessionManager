@@ -44,6 +44,7 @@ jobs:
       - name: Zip extension
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
+          mv LICENSE ./dist/LeetcodeSessionManager
           cd ./dist/LeetcodeSessionManager
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
                    
