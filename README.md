@@ -1,4 +1,13 @@
-# LeetcodeSessionManager(Multiple users 1 leetcode premium account)
+# LeetcodeSessionManager[![Build and Release](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml)
+#### Multiple Users, 1 Leetcoce Premium Account!
+<p align="center">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/leetsessionmanager/" target="_blank">
+    <img width="149" height="48" src="badges/Firefox.png?raw=true">
+  </a>
+  <a href="https://chrome.google.com/webstore/detail/heikhhbkgpfclbhidmjebagbmnkcmkfk" target="_blank">
+  <img width="178" height="48" src="badges/Chrome.png?raw=true">
+  </a>
+</p>
 
 # About
 This extension helps is multiple people using the same LeetCode account.
