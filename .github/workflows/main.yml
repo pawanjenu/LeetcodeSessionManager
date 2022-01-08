@@ -39,7 +39,7 @@ jobs:
             
        # Runs a set of commands using the runners shell
       - name: Zip disk folder
-        run: zip -r LeetcodeSessionManager-$(node -p "require('./package.json').version") ./dist/LeetcodeSessionManager
+        run: zip -r LeetcodeSessionManager-$(node -p "require('./package.json').version").zip ./dist/LeetcodeSessionManager
                    
       - name: 'Upload Build Artifacts'
         uses: actions/upload-artifact@v2
