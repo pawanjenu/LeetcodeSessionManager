@@ -22,4 +22,4 @@ Please head over to: [Installation section](https://github.com/pawanjenu/Leetcod
 ### Note: in case new sessions are added to your account, please click on `reload session` in the extension to reflect the latest changes if not present.
 
 # ScreenShots:
-<img src="assets/screenshots/Screenshot-1.png" width="250" height="200" /> <img src="assets/screenshots/Screenshot-2.png" width="250" height="200" />  <img src="assets/screenshots/Screenshot-3.png" width="250" height="200" />
+<img src="src/assets/screenshots/Screenshot-1.png" width="250" height="200" /> <img src="src/assets/screenshots/Screenshot-2.png" width="250" height="200" />  <img src="src/assets/screenshots/Screenshot-3.png" width="250" height="200" />
