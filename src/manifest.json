@@ -3,7 +3,7 @@
   "name": "LeetSessionManager",
   "description": "Manage leetcode sessions easily",
   "homepage_url": "https://github.com/pawanjenu/LeetcodeSessionManager",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Pawan Jenu",
   "browser_action": {
     "default_icon": "assets/thumbnail.png",
