@@ -119,6 +119,10 @@
     font-size: 15px;
   }
 
+  .note {
+    margin: 3px;
+    font-size: 12px;
+  }
   .card-container .card:not(:last-child) {
     margin-right: 0;
   }
@@ -274,7 +278,7 @@
   }
 
   mat-divider {
-    margin-top: 18px;
+    margin-top: 0px;
     margin-bottom: 5px;
     width: 100%;
     border-top-width: 3px;
@@ -378,6 +382,7 @@
       <span *ngIf="!currentChosenSession">No User Session chosen</span>
     </div>
 
+    <p class="note">The above user session will be used for your leetcode submissions</p>
     <mat-divider>sdsd</mat-divider>
     <h4 style="font-weight: 600">
       Choose a session to update Current User Session
