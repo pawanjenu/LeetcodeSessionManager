@@ -22,20 +22,12 @@ interface Food {
 export class AppComponent {
   title = 'LeetcodeSessionManager';
 
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
-  ];
-
   leetcodeSessions: Session[] = [];
 
   currentChosenSession: Session | undefined = undefined;
   isLoading: boolean = false;
 
-  private _dialogRef: any;
   constructor(
-    private formBuilder: FormBuilder,
     private _appService: SrcService,
     private cdRef: ChangeDetectorRef,
     private _snackBarService: SnackbarService,
@@ -80,9 +72,17 @@ export class AppComponent {
    */
   async changeCurrentUserSession(session: Session) {
     this.currentChosenSession = session;
+
+    if(this.currentChosenSession !== undefined){
+      if(this.currentChosenSession.name === ""){
+        this.currentChosenSession.name = "Anonymous Session";
+      }
+    }
     // send message to background to store to local storage
+    console.log('current_session', this.currentChosenSession);
+    
     chrome.runtime.sendMessage({
-      current_session: session,
+      current_session: this.currentChosenSession,
     });
   }
 
@@ -104,7 +104,9 @@ export class AppComponent {
       } else {
         this.isLoading = false;
         console.debug('Fetched sessions: ', sessions);
-        this.leetcodeSessions = sessions;
+        this.leetcodeSessions = sessions.map( session => ({
+          ...session, name: session.name === "" ? "Anonymous Session" : session.name
+        }));
         chrome.runtime.sendMessage({
           sessions: this.leetcodeSessions,
         });
