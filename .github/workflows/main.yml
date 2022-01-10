@@ -60,9 +60,9 @@ jobs:
       - name: Release to Mozilla Amo
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          npm i web-ext
+          npm install --global web-ext
           cd ./dist/LeetcodeSessionManager
-          web-ext sign --api-key ${{ secrets.FIREFOX_API_KEY }} --api-secret ${{ secrets.FIREFOX_API_SECRET }} --channel listed --id ${{ secrets.FIREFOX_API_ID }} || true
+          npx web-ext sign --api-key ${{ secrets.FIREFOX_API_KEY }} --api-secret ${{ secrets.FIREFOX_API_SECRET }} --channel listed --id ${{ secrets.FIREFOX_API_ID }} || true
 
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
