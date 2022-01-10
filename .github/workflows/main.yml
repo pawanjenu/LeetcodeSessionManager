@@ -55,7 +55,14 @@ jobs:
           mv ./new_manifest.json ./dist/LeetcodeSessionManager/manifest.json
           cd ./dist/LeetcodeSessionManager
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
-                   
+
+       # Runs a set of commands using the runners shell
+      - name: Release to Mozilla Amo
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          cd ./dist/LeetcodeSessionManager
+          web-ext sign --api-key ${{ secrets.FIREFOX_API_KEY }} --api-secret ${{ secrets.FIREFOX_API_SECRET }} --channel listed --id ${{ secrets.FIREFOX_API_ID }} || true
+
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'workflow_dispatch' }}
