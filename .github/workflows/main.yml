@@ -69,5 +69,5 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           files: ./LeetcodeSessionManager*.zip       
-          tag_name: v${{ github.run_number }}
+          tag_name: v${{ github.event.inputs.tag }}
           name: Release V${{ github.event.inputs.tag }}
