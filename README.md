@@ -7,6 +7,9 @@
   <a href="https://chrome.google.com/webstore/detail/nophchlleabfnhjonhnhjiacdjhjkghb" target="_blank">
   <img width="178" height="48" src="badges/Chrome.png?raw=true">
   </a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/jpijebggajegceaheogkhmmgdbfpbkla" target="_blank">
+  <img width="178" height="48" src="badges/Edge.png?raw=true">
+  </a>
 </p>
 
 # About
