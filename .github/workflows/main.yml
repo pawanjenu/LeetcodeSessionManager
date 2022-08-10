@@ -34,7 +34,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Npm dependencies
-        run: npm install
+        run: npm install --save --legacy-peer-deps
         
       # Runs a set of commands using the runners shell
       - name: Npm build
