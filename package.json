@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build --watch --configuration development",
-    "build": "ng build --configuration development",
+    "build": "ng build --output-hashing none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier \"src/**/*.{css,html,js,json,md,scss,ts}\" ",
