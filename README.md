@@ -1,11 +1,14 @@
 # LeetcodeSessionManager [![Build and Release](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/pawanjenu/LeetcodeSessionManager/actions/workflows/main.yml)
-#### Multiple Users, 1 Leetcoce Premium Account!
+#### Multiple Users, 1 Leetcode Premium Account!
 <p align="center">
-  <a href="https://addons.mozilla.org/en-US/firefox/addon/leetsessionmanager/" target="_blank">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/leetsessionmanagerr/" target="_blank">
     <img width="149" height="48" src="badges/Firefox.png?raw=true">
   </a>
-  <a href="https://github.com/pawanjenu/LeetcodeSessionManager/wiki/Install-extension" target="_blank">
+  <a href="https://chrome.google.com/webstore/detail/nophchlleabfnhjonhnhjiacdjhjkghb" target="_blank">
   <img width="178" height="48" src="badges/Chrome.png?raw=true">
+  </a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/jpijebggajegceaheogkhmmgdbfpbkla" target="_blank">
+  <img width="178" height="48" src="badges/Edge.png?raw=true">
   </a>
 </p>
 
@@ -18,9 +21,6 @@ if User-1, activates his session in his device and at the same time you(User-2) 
 
 How does this extension solve this issue?
 you get to choose the session(sub-account) you want to track your submissions, and this extension will make sure, its tracked inside your chosen session.
-
-# Installation guide:
-Please head over to: [Installation section](https://github.com/pawanjenu/LeetcodeSessionManager/wiki/Install-extension)
 
 # Usage:
 * Please make sure that you are logged in to leetcode.com before using the extension.

@@ -23,7 +23,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    name: 'Build and release Zip'
+    name: 'Build and release Extension'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -55,11 +55,19 @@ jobs:
           mv ./new_manifest.json ./dist/LeetcodeSessionManager/manifest.json
           cd ./dist/LeetcodeSessionManager
           zip -r ../../LeetcodeSessionManager-${{ github.event.inputs.tag }}.zip .
-                   
+
+       # Runs a set of commands using the runners shell
+      - name: Release to Mozilla Amo
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          npm install --global web-ext
+          cd ./dist/LeetcodeSessionManager
+          npx web-ext sign --api-key ${{ secrets.FIREFOX_API_KEY }} --api-secret ${{ secrets.FIREFOX_API_SECRET }} --channel listed --id ${{ secrets.FIREFOX_API_ID }} || true
+
       - name: 'Create GitHub Release'
         uses: softprops/action-gh-release@v1
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           files: ./LeetcodeSessionManager*.zip       
-          tag_name: v${{ github.run_number }}
+          tag_name: v${{ github.event.inputs.tag }}
           name: Release V${{ github.event.inputs.tag }}
