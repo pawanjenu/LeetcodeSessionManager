@@ -58,7 +58,7 @@ jobs:
 
        # Runs a set of commands using the runners shell
       - name: Release to Mozilla Amo
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: false
         run: |
           npm install --global web-ext
           cd ./dist/LeetcodeSessionManager
