@@ -22,6 +22,8 @@ if User-1, activates his session in his device and at the same time you(User-2) 
 How does this extension solve this issue?
 you get to choose the session(sub-account) you want to track your submissions, and this extension will make sure, its tracked inside your chosen session.
 
+*summary*: Think of it like netflix screens, the question you solved gets saved to your screen(session).
+
 # Usage:
 * Please make sure that you are logged in to leetcode.com before using the extension.
 * On the first run, no session is chosen, so please click on the the drop down and select the desired session.
