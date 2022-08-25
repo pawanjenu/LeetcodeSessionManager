@@ -18,7 +18,7 @@
     "scripts": ["background.js", "runtime.js"],
     "persistent": true
   },
-  "content_security_policy": "script-src 'self'; object-src 'self' https://fonts.gstatic.com",
+  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.gstatic.com",
   "permissions": [
     "https://leetcode.com/*",
     "unlimitedStorage",
